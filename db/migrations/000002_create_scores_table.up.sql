@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS scores(
+  id SERIAL PRIMARY KEY,
+  player_id INTEGER NOT NULL REFERENCES players(id),
+  score INTEGER NOT NULL
+);
