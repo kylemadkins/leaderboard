@@ -9,7 +9,9 @@
 
 ## Endpoints
 
-`GET /players`
+```
+GET /players
+```
 Returns a list of all players
 
 ```
@@ -22,6 +24,6 @@ Creates a player
 
 ## Enhancements
 
-[] Better validations for a player's username, including a profanity filter
-[] Ability to search players
-[] Sort leaderboard by score
+- [ ] Better validations for a player's username, including a profanity filter
+- [ ] Ability to search players
+- [ ] Sort leaderboard by score
