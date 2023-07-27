@@ -21,3 +21,12 @@ func (db *Database) GetAllPlayers() (*models.PlayerList, error) {
 	}
 	return list, nil
 }
+
+func (db *Database) CreatePlayer(player *models.Player) error {
+	query := `INSERT INTO players (username) VALUES ($1) RETURNING id, username, created_at`
+	err := db.Conn.QueryRow(query, player.Username).Scan(&player.ID, &player.Username, &player.CreatedAt)
+	if err != nil {
+		return err
+	}
+	return nil
+}
