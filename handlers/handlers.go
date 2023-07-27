@@ -17,15 +17,14 @@ func NewHandler(db db.Database) http.Handler {
 	router.NotFound(notFoundHandler)
 	router.Route("/players", players)
 	router.Route("/scores", scores)
+	router.Route("/leaderboard", leaderboard)
 	return router
 }
 
 func methodNotAllowedHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
 	render.Render(w, r, ErrMethodNotAllowed)
 }
 
 func notFoundHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
 	render.Render(w, r, ErrNotFound)
 }
