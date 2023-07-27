@@ -3,12 +3,14 @@ services:
   db:
     image: postgres
     restart: always
-    env_file:
-      - .env
     ports:
       - 5432:5432
     volumes:
       - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: leaderboard
   app:
     build:
       dockerfile: Dockerfile.dev
@@ -19,5 +21,7 @@ services:
       - .:/usr/src/app
     depends_on:
       - db
+    env_file:
+      - .env
 volumes:
   data:
