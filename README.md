@@ -27,3 +27,4 @@ Creates a player
 - [ ] Better validations for a player's username, including a profanity filter
 - [ ] Ability to search players
 - [ ] Sort leaderboard by score
+- [ ] Authentication
