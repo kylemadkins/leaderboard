@@ -9,6 +9,8 @@
 
 ## Endpoints
 
+### Players
+
 ```
 GET /players
 ```
@@ -16,11 +18,29 @@ Returns a list of all players
 
 ```
 POST /players
-{
-  "username": "ellie96"
-}
+{ "username": "ellie96" }
 ```
 Creates a player
+
+### Scores
+
+```
+GET /scores
+```
+Returns a list of all scores
+
+```
+POST /scores
+{ "player_id": 1, "score": 300 }
+```
+Publishes a score for a specific player
+
+### Leaderboard
+
+```
+GET /leaderboard
+```
+Gets the current leaderboard. The leaderboard shows the highest score for each player, ordered by score and the date that the score was achieved
 
 ## Enhancements
 
