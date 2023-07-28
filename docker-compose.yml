@@ -1,4 +1,5 @@
 version: "3.9"
+
 services:
   db:
     image: postgres
@@ -11,6 +12,7 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: leaderboard
+
   app:
     build:
       dockerfile: Dockerfile.dev
