@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 	"net/http"
+	"regexp"
 )
 
 type Player struct {
@@ -18,6 +19,9 @@ type PlayerList struct {
 func (p *Player) Bind(r *http.Request) error {
 	if p.Username == "" {
 		return fmt.Errorf("Username is a required field")
+	}
+	if !regexp.MustCompile(`^[a-zA-Z0-9]*$`).MatchString(p.Username) {
+		return fmt.Errorf("Username must be alphanumeric")
 	}
 	return nil
 }
